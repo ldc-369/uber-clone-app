@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const fetchData = async () => {
+            const res = await fetch('http://localhost:8000/api/user/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    // "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjp7ImZpcnN0TmFtZSI6ImxlIGRpbmgiLCJsYXN0TmFtZSI6ImN1b25nIn0sImVtYWlsIjoibGVkaW5oY3VvbmdAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkbS4zNmJyZTYvZW1iMjFPaE8vUUF2T09aQXBIZnBicHZlUnRBbzRwbVIvcHhQZUlkN00zTWUiLCJzb2NrZXRJZCI6bnVsbCwiX2lkIjoiNjc0ZjMyOGYzYjAyYjEyOWMyZjdiMzgyIiwiY3JlYXRlZEF0IjoiMjAyNC0xMi0wM1QxNjozMjoxNS4wNTBaIiwidXBkYXRlZEF0IjoiMjAyNC0xMi0wM1QxNjozMjoxNS4wNTBaIiwiX192IjowLCJpYXQiOjE3MzMyNDM1MzUsImV4cCI6MTczMzMyOTkzNX0.ot0DyTzMqeGHi2azrdOPVDsFjSaCKZeu5yLycTK8JlM`
+                    // "Authorization": `Bearer ${localStorage.getItem('token')}`
+                },
+                body: JSON.stringify({
+                    email: 'ledinhcuong@gmail.com',
+                    password: '123456',
+                    // name: {
+                    //     firstName: 'le dinh',
+                    //     lastName: 'cuong'
+                    // }
+                })
+            })
+
+            console.log(await res.json())
+        }
+
+        fetchData()
+
+    </script>
+</body>
+</html>

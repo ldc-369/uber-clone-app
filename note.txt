@@ -1,1 +1,3 @@
--(npx nodemon)
+-(nodemon start)
+
+-blacklist
